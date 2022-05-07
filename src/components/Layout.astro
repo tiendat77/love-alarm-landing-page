@@ -1,0 +1,23 @@
+---
+import '../styles/styles.scss';
+import Background from './Background.astro';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>{title}</title>
+</head>
+<body>
+  <slot />
+  <Background />
+</body>
+</html>
+
+<style lang="scss">
+</style>

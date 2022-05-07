@@ -1,0 +1,88 @@
+---
+const apkUrl = (import.meta.env.APK_DOWNLOAD_URL as string) || '/files/love-alarm-v0.0.1.apk';
+---
+
+<section class="section main">
+  <div class="container">
+    <div class="columns is-desktop">
+      <div class="column">
+        <h2 class="title is-2">Ring your world with</h2>
+        <h1 class="title is-1 love-alarm">Love Alarm</h1>
+
+        <p>Love Alarm is the mobile app based on the Original webtoon & K-drama "Love Alarm"</p>
+        <p>Your alarm “rings” every time someone within a 10-meter radius “likes” you. Likewise, you could tell your crush by ringing her/his alarm.</p>
+
+        <div class="drawing-download mt-4">
+          <svg class="swirly-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f858a5" d="m463.07 473.71c-34.793-31.691-60.703-72.97-100.13-99.496-7.8125-5.0739-14.808 4.554-13.433 10.988 2.0775 8.7087 4.0832 21.185 7.6125 32.569-21.678-9.5426-45.007-12.344-68.259-18.907-21.757-5.7782-39.587-18.998-53.955-35.149 6.8332-2.1012 13.313-5.3436 20.544-8.1886 52.24-26.661 144.37-155.98 71.878-206.62-40.878-29.195-110.64 5.3477-133.71 43.609-30.488 50.518-22.333 110.97 6.4502 159.47-24.194 2.4505-48.975-3.017-72.892-13.746-49.677-23.371-67.106-73.495-60.732-125.33 11.801-94.637 94.141-189.15 195.31-174.76 4.5177 0.48225 7.6605-5.4704 3.1806-7.8357-107.49-54.847-206.1 95.796-218.14 183.65-13.806 100.25 77.493 171.29 166.85 155.66 4.0445 4.9923 8.441 11.119 13.623 15.759 33.578 35.804 80.747 35.015 122.65 51.428-10.332 6.9171-21.052 14.577-33.233 19.57-8.7607 3.9404-10.178 17.467 1.0951 19.608 46.579 9.3679 92.332 22.102 139.63 15.67 7.5812-1.7063 13.081-12.123 5.6604-17.949zm-240.26-126.85c-6.201-9.9367-12.015-20.618-15.938-31.255-28.696-70.347 6.2789-154.66 89.306-156.5 38.489-0.61598 36.398 44.909 30.188 71.135-8.7292 38.215-34.381 74.159-65.062 97.933-13.004 8.3632-25.572 14.099-38.495 18.695zm156.06 94.766c0.74791 0.39487 2.2777-0.70039 2.6716-1.4464 2.0824-9.3694-1.0972-19.614-5.021-30.251 20.34 19.305 37.224 41.54 57.171 61.591-28.67 0.0871-57.225-5.4698-86.522-11.423 8.7986-5.8234 16.853-12.039 27.101-15.194 2.2777-0.70039 3.8114-1.7937 4.5971-3.2818z" />
+          </svg>
+        </div>
+
+        <div class="columns mt-4">
+          <div class="column has-text-centered">
+            <a href="https://github.com/tiendat77/love-alarm" target="_blank">
+              <img class="badge" src="/images/github.svg">
+            </a>
+          </div>
+
+          <div class="column has-text-centered">
+            <a onclick="notifyAppStore()">
+              <img class="badge" src="/images/app-store.svg">
+            </a>
+          </div>
+
+          <div class="column has-text-centered">
+            <a onclick="notifyGooglePlayStore()">
+              <img class="badge" src="/images/google-play-store.svg">
+            </a>
+            <a id="apk-download" href={apkUrl} download target="_blank" hidden></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-flex is-align-items-center is-justify-content-center">
+        <img src="/images/fdd0c2610cdd728ba10d85ed7df6ca99.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  function notifyAppStore() {
+    alert("Just kidding, Love Alarm is not available on App Store yet");
+  }
+
+  function notifyGooglePlayStore() {
+    if (confirm("Love Alarm is not available on Google Play yet. Do you want to download apk instead?")) {
+      document.getElementById("apk-download").click();
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import '../../node_modules/bulma/sass/utilities/mixins.sass';
+
+  .love-alarm {
+    color: var(--color-primary);
+  }
+
+  .swirly-arrow {
+    height: auto;
+    width: 60px;
+  }
+
+  @include until(768px) {
+    .badge {
+      width: 250px;
+    }
+  }
+
+  @include from(1024px) {
+    .main {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>
