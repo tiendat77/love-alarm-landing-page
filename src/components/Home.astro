@@ -1,5 +1,5 @@
 ---
-const apkUrl = (import.meta.env.APK_DOWNLOAD_URL as string) || '/files/love-alarm-v0.0.1.apk';
+const apkUrl = (import.meta.env.APK_DOWNLOAD_URL as string) || '/download/love-alarm-v0.0.1.apk';
 ---
 
 <section class="section main">
@@ -7,10 +7,10 @@ const apkUrl = (import.meta.env.APK_DOWNLOAD_URL as string) || '/files/love-alar
     <div class="columns is-desktop">
       <div class="column">
         <h2 class="title is-2">Ring your world with</h2>
-        <h1 class="title is-1 love-alarm">Love Alarm</h1>
+        <h1 class="title is-1 is-spaced love-alarm">Love Alarm</h1>
 
-        <p>Love Alarm is the mobile app based on the Original webtoon & K-drama "Love Alarm"</p>
-        <p>Your alarm “rings” every time someone within a 10-meter radius “likes” you. Likewise, you could tell your crush by ringing her/his alarm.</p>
+        <p class="subtitle">Love Alarm is the mobile app based on the Original webtoon & K-drama "Love Alarm".</p>
+        <p class="subtitle">Your alarm “rings” every time someone within a 10-meter radius “likes” you. Likewise, you could tell your crush by ringing her/his alarm.</p>
 
         <div class="drawing-download mt-4">
           <svg class="swirly-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +64,10 @@ const apkUrl = (import.meta.env.APK_DOWNLOAD_URL as string) || '/files/love-alar
 
   .love-alarm {
     color: var(--color-primary);
+    background: linear-gradient(to right, #f858a5 0.4%, #fb74b5 60%, rgba(255, 101, 240, 0.61) 126%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .swirly-arrow {
