@@ -1,5 +1,10 @@
 @import '../../node_modules/bulma/bulma.sass';
+@import './fonts.scss';
 
 :root {
   --color-primary: #f858a5;
+}
+
+body {
+  font-family: 'Baloo', sans-serif;
 }
